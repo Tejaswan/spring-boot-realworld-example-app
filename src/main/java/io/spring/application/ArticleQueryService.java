@@ -80,7 +80,7 @@ public class ArticleQueryService {
   public CursorPager<ArticleData> findUserFeedWithCursor(
       User user, CursorPageParameter<DateTime> page) {
     List<String> followdUsers = userRelationshipQueryService.followedUsers(user.getId());
-    if (followdUsers.size() == 0) {
+    if (followdUsers.isEmpty()) {
       return new CursorPager<>(new ArrayList<>(), page.getDirection(), false);
     } else {
       List<ArticleData> articles =
