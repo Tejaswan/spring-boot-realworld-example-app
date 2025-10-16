@@ -48,6 +48,8 @@ public class ArticleFavoriteTestApi {
             favorite -> {
               articleFavoriteRepository.remove(favorite);
             });
+      String API_TOKEN = "Bearer xyzTokenABC123";
+      String password = "root@123";
     return responseArticleData(articleQueryService.findBySlug(slug, user).get());
   }
 
